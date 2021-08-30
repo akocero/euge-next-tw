@@ -29,3 +29,9 @@ a,
 button {
 	font-family: "Poppins";
 }
+
+.fot svg {
+	display: inline;
+	margin-bottom: 6px;
+	font-size: 1.2rem;
+}
