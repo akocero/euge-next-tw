@@ -1,11 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { FiGithub, FiLink, FiMoon, FiSun } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiTwitter, FiFacebook } from "react-icons/fi";
 import React, { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/layouts/Navbar/Navbar";
 import ButtonCTA from "../components/ButtonCTA";
+import ButtonLink from "../components/ButtonLink";
+import Tag from "../components/Tag";
 export default function Home() {
 	const [dark, setDark] = useState(false);
 
@@ -42,12 +44,10 @@ export default function Home() {
 						<div className="flex mt-8">
 							<ButtonCTA />
 							<div className="">
-								<button className="bg-gray-200 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-100 text-xl border border-gray-300 dark:border-0 mr-3">
-									<FiGithub />
-								</button>
-								<button className="bg-gray-200 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-100 text-xl border border-gray-300 dark:border-0 mr-3">
-									<FiLink />
-								</button>
+								<ButtonLink Icon={FiGithub} />
+								<ButtonLink Icon={FiFacebook} />
+								<ButtonLink Icon={FiLinkedin} />
+								<ButtonLink Icon={FiTwitter} />
 							</div>
 						</div>
 					</div>
@@ -58,6 +58,15 @@ export default function Home() {
 					</h2>
 					<div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
 						<ProjectCard />
+					</div>
+				</section>
+				<section className="h-screen max-w-screen-xl mx-auto py-6">
+					<h2 className="font-bold text-4xl mb-10">skills.</h2>
+					<div>
+						<Tag type={"laravel"} size={"xl"} />
+						<Tag type={"vue"} size={"xl"} />
+						<Tag type={"javascript"} size={"xl"} />
+						<Tag type={"firebase"} size={"xl"} />
 					</div>
 				</section>
 			</main>
