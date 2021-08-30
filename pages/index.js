@@ -8,6 +8,7 @@ import Footer from "../components/layouts/Footer";
 import ButtonCTA from "../components/ButtonCTA";
 import ButtonLink from "../components/ButtonLink";
 import Tag from "../components/Tag";
+import SkillItem from "../components/SkillItem";
 export default function Home() {
 	const [dark, setDark] = useState(true);
 
@@ -25,7 +26,7 @@ export default function Home() {
 	};
 
 	return (
-		<div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+		<div className="bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200">
 			<Navbar toggleDarkMode={toggleDarkMode} dark={dark} />
 			<main>
 				<section className="flex items-center -mt-12 justify-center h-screen">
@@ -82,12 +83,26 @@ export default function Home() {
 				</section>
 				<section className="max-w-screen-xl mx-auto py-6">
 					<h2 className="font-bold text-4xl mb-10">skills.</h2>
-					<div>
-						<Tag type={"laravel"} size={"xl"} />
-						<Tag type={"vue"} size={"xl"} />
-						<Tag type={"javascript"} size={"xl"} />
-						<Tag type={"firebase"} size={"xl"} />
-					</div>
+					<ul className="grid grid-cols-10 text-gray-400 text-5xl gap-2 ">
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+						<SkillItem />
+					</ul>
 				</section>
 				<section className="max-w-screen-xl mx-auto py-6">
 					<h2 className="font-bold text-4xl mb-10">experiences.</h2>
@@ -135,7 +150,7 @@ export default function Home() {
 					</div>
 				</section>
 			</main>
-			<Footer />
+			<Footer dark={dark} />
 		</div>
 	);
 }
