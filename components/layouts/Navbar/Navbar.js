@@ -11,6 +11,7 @@ const Navbar = ({ toggleDarkMode, dark }) => {
 					<NavItem title={"Projects"} />
 					<NavItem title={"Experiences"} />
 					<NavItem title={"About"} />
+					<NavItem title={"Skills"} />
 					<li className="ml-4">
 						{dark ? (
 							<button

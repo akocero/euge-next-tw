@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 const Tag = ({ type, size }) => {
 	const [tagColor, setTagColor] = useState("");
 	const generateStyle = (type) => {
