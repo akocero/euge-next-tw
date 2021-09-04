@@ -4,11 +4,11 @@ import NavItem from "./NavItem";
 const Navbar = ({ toggleDarkMode, dark, isScrollingDown }) => {
 	return (
 		<header
-			className={`fixed top-0 left-0 w-full flex h-20 items-center transition-all duration-500  ${
+			className={`fixed top-0 left-0 w-full flex h-20 items-center transition-all duration-300  ${
 				isScrollingDown == "scroll-down" ? "-top-full" : ""
 			} ${
 				isScrollingDown == "scroll-up"
-					? "bg-white dark:bg-gray-900 shadow"
+					? "bg-white dark:bg-gray-800 shadow z-50 h-16"
 					: ""
 			}`}
 		>
