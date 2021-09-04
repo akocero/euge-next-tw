@@ -11,25 +11,52 @@ import Tag from "../components/Tag";
 import SkillItem from "../components/SkillItem";
 export default function Home() {
 	const [dark, setDark] = useState(true);
+	const [lastScroll, setLastScroll] = useState(0);
+	const [scrollState, setScrollState] = useState("");
 
 	useEffect(() => {
+		const onScroll = (e) => {
+			const currentScroll = window.pageYOffset;
+
+			if (currentScroll > lastScroll) {
+				setScrollState("scroll-down");
+			}
+
+			if (currentScroll < lastScroll) {
+				setScrollState("scroll-up");
+			}
+
+			if (currentScroll <= 0) {
+				setScrollState("");
+			}
+
+			setLastScroll(currentScroll);
+		};
+
+		window.addEventListener("scroll", onScroll);
+
+		return () => window.removeEventListener("scroll", onScroll);
+	}, [scrollState, lastScroll]);
+
+	const toggleDarkMode = () => {
+		setDark(!dark);
 		if (dark) {
 			document.body.classList.add("dark");
 			console.log("sadasdsad");
 		} else {
 			document.body.classList.remove("dark");
 		}
-	}, [dark]);
-
-	const toggleDarkMode = () => {
-		setDark(!dark);
 	};
 
 	return (
 		<div className="bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200">
-			<Navbar toggleDarkMode={toggleDarkMode} dark={dark} />
+			<Navbar
+				toggleDarkMode={toggleDarkMode}
+				dark={dark}
+				isScrollingDown={scrollState}
+			/>
 			<main>
-				<section className="flex items-center -mt-12 justify-center h-screen">
+				<section className="flex items-center justify-center h-screen">
 					<div className="w-2/5">
 						{/* <Image src="/images/me.png" width={200} height={200} /> */}
 					</div>
@@ -112,7 +139,7 @@ export default function Home() {
 						aperiam nam ipsum iusto id sequi?
 					</p>
 
-					<div className="flex overflow-x-scroll ">
+					<div className="flex overflow-x-scroll">
 						<div className="flex items-center  w-full py-8">
 							{/* <Image
 								className="rounded-lg"
