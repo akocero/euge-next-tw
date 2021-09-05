@@ -1,7 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 @tailwind base;
+.tooltip {
+	@apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+	@apply visible z-50;
+}
 @tailwind components;
 @tailwind utilities;
 
@@ -12,7 +21,7 @@
 } */
 
 body {
-	font-family: "Nunito";
+	font-family: "Noto Sans";
 	/* background-color: #1a1a1a; */
 }
 
@@ -35,3 +44,7 @@ button {
 	margin-bottom: 6px;
 	font-size: 1.2rem;
 }
+
+/* .feat-img {
+	margin-left: -2rem;
+} */
