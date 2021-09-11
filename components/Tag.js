@@ -25,7 +25,7 @@ const Tag = ({ type, size, tooltip = "" }) => {
 
 	return (
 		<span
-			className={` ${tagColor} ${tooltip} rounded-full px-3 py-0.5 font-semibold mr-2 inline-block mb-2 text-${size}`}
+			className={` ${tagColor} ${tooltip} rounded-full px-3 py-0.5 mr-2 font-medium inline-block mb-2 text-${size}`}
 		>
 			#{type}
 		</span>

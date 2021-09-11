@@ -20,9 +20,15 @@
 	}
 } */
 
+@font-face {
+	font-family: "Cascadia Code";
+	src: url("../public/CascadiaCode.woff2") format("woff2");
+}
+
 body {
-	font-family: "Noto Sans";
+	font-family: "Cascadia Code";
 	/* background-color: #1a1a1a; */
+	overflow-x: hidden;
 }
 
 .default-transition {
@@ -35,6 +41,7 @@ h3,
 h4,
 h5,
 a,
+p,
 button {
 	font-family: "Poppins";
 }
@@ -48,3 +55,67 @@ button {
 /* .feat-img {
 	margin-left: -2rem;
 } */
+
+.intro::after {
+	content: "";
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	border-radius: 50%;
+	top: -4rem;
+	right: 0;
+	background-color: #f59e0b;
+	opacity: 0.03;
+}
+
+.intro::before {
+	content: "";
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	border-radius: 50%;
+	top: -4rem;
+	right: -2rem;
+	background-color: #c4c4c4;
+	opacity: 0.03;
+}
+.featured-content {
+	position: relative;
+}
+.featured-content::after {
+	content: "";
+	height: 200%;
+	width: 150%;
+	position: absolute;
+	border-radius: 300px;
+	top: -40%;
+	right: -12%;
+	background-color: #f59e0b;
+	opacity: 0.03;
+	transform: rotateZ(24deg);
+}
+
+.featured-content::before {
+	content: "";
+	height: 200%;
+	width: 150%;
+	position: absolute;
+	border-radius: 300px;
+	top: -40%;
+	right: -16%;
+	background-color: #c4c4c4;
+	opacity: 0.03;
+	transform: rotateZ(24deg);
+}
+
+.featured-img::after {
+	content: "";
+	height: 100%;
+	width: 94%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 1rem;
+	background-color: #f59e0b;
+	opacity: 0.13;
+}

@@ -18,6 +18,12 @@ module.exports = {
 			yellow: colors.amber,
 			blue: colors.blue,
 		},
+		backgroundColor: (theme) => ({
+			...theme("colors"),
+			primary: "#1D1D1D",
+			secondary: "#ffed4a",
+			danger: "#e3342f",
+		}),
 		extend: {},
 	},
 	variants: {
