@@ -118,32 +118,24 @@ export default function Home() {
 						}}
 					/>
 					<article className="flex">
-						{/* <div className="absolute top-0 left-0 w-3/6 h-full justify-center flex flex-col"></div> */}
-						{/* <div className="w-3/5"> */}
-						<div className="relative w-3/5 featured-img">
+						<div className="relative w-3/5 featured-img z-20">
 							<img
 								src="/images/pelikula-land.png"
 								alt=""
 								width="94%"
 								className="rounded-2xl"
 							/>
-							{/* <img
-								src="/images/pelikula-port.png"
-								alt=""
-								className="absolute top-0 right-10 scale-90 translate-y-20 rotate-2 filter drop-shadow-2xl rounded-lg"
-							/> */}
 						</div>
 
-						{/* </div> */}
-						<div className="w-2/5 z-10 flex flex-col h-full featured-content">
-							<h3 className="text-2xl text-yellow-500 font-bold">
+						<div className="w-2/5 relative z-10 flex flex-col h-full featured-content">
+							<h3 className="text-2xl text-yellow-500  font-bold">
 								PelikulaPH
 							</h3>
-							<label className="text-md text-gray-300">
+							<label className="text-md dark:text-gray-300 text-gray-800">
 								IMDB + Mobilarian Alternative
 							</label>
 
-							<p className="text-md text-gray-400 mt-4">
+							<p className="text-md dark:text-gray-400 text-gray-800 mt-4">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Animi quas in necessitatibus
 								id perferendis error odit incidunt expedita

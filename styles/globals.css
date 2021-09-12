@@ -95,7 +95,7 @@ button {
 	top: -4rem;
 	right: 0;
 	background-color: #f59e0b;
-	opacity: 0.3;
+	opacity: 0.2;
 	transform: rotateZ(-24deg);
 	z-index: -1;
 }
@@ -128,7 +128,7 @@ button {
 	right: -12%;
 	/* background-color: #f59e0b; */
 	border: 2px solid #f59e0b;
-	opacity: 0.1;
+	opacity: 0.03;
 	transform: rotateZ(24deg);
 }
 
@@ -144,6 +144,36 @@ button {
 	border: 3px solid #f59e0b;
 	opacity: 0.2;
 	transform: rotateZ(24deg);
+}
+
+.featured-content::after {
+	content: "";
+	height: 200%;
+	width: 150%;
+	position: absolute;
+	border-radius: 300px;
+	top: -40%;
+	right: -12%;
+	background-color: #f59e0b;
+	/* border: 2px solid #f59e0b; */
+	opacity: 0.09;
+	transform: rotateZ(24deg);
+	z-index: -1;
+}
+
+.featured-content::before {
+	content: "";
+	height: 200%;
+	width: 150%;
+	position: absolute;
+	border-radius: 300px;
+	top: -40%;
+	right: -16%;
+	/* background-color: #c4c4c4; */
+	border: 3px solid #f59e0b;
+	opacity: 0.8;
+	transform: rotateZ(24deg);
+	z-index: -1;
 }
 
 .featured-img::after {
