@@ -117,7 +117,8 @@ button {
 .featured-content {
 	position: relative;
 }
-.featured-content::after {
+
+.dark .featured-content::after {
 	content: "";
 	height: 200%;
 	width: 150%;
@@ -131,7 +132,7 @@ button {
 	transform: rotateZ(24deg);
 }
 
-.featured-content::before {
+.dark .featured-content::before {
 	content: "";
 	height: 200%;
 	width: 150%;

@@ -88,7 +88,7 @@ export default function Home() {
 					<div className="w-1/6">
 						{/* <Image src="/images/me.png" width={200} height={200} /> */}
 					</div>
-					<div className="w-5/6 intro relative z-50">
+					<div className="w-5/6 intro relative z-10">
 						{/* <div className=""></div> */}
 						<label className="text-xl ">
 							Hello, It's Eugene from Manila
