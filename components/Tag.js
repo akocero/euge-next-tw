@@ -83,7 +83,7 @@ const Tag = ({ type, size, tooltip = "" }) => {
 		<span
 			className={`dark:bg-gray-800  dark:text-gray-300 ${tooltip} rounded-full px-3 py-0.5 mr-2 font-regular inline-block mb-2 text-${size}`}
 		>
-			{type}
+			${type}
 		</span>
 	);
 };

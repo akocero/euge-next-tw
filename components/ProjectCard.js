@@ -5,7 +5,7 @@ import ButtonLink from "./ButtonLink";
 const ProjectCard = ({ data }) => {
 	return (
 		<div className="dark:bg-primary bg-gray-100 text-gray-400  p-6 rounded-xl border-gray-200 border dark:border-0">
-			<div className="mb-6 flex text-2xl">
+			<div className="mb-6 flex text-2xl text-gray-700 dark:text-gray-300">
 				<a href="">
 					<FiFolder />
 				</a>

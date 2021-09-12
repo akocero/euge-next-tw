@@ -274,12 +274,76 @@ export default function Home() {
 				<section className="">
 					<Heading2
 						data={{
-							title: "Skills",
-							subtitle: "What tool I use?",
+							title: "About Me",
+							subtitle: "What I love?",
 							textAlign: "text-center",
 						}}
 					/>
-					<SkillList />
+					<div className="grid grid-cols-3 gap-4 grid-rows-6">
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary row-span-2">
+							<img
+								src="/images/1.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/2.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/3.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary row-span-2">
+							<img
+								src="/images/4.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/5.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/6.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary row-span-2">
+							<img
+								src="/images/7.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/8.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/9.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+					</div>
 				</section>
 			</main>
 			<Footer dark={dark} />
