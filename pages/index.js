@@ -67,18 +67,18 @@ export default function Home() {
 				dark={dark}
 				isScrollingDown={scrollState}
 			/>
-			<ul className="links flex flex-col items-start fixed bottom-4 left-10">
-				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+			<ul className="links flex flex-col items-start fixed bottom-4 left-10 text-xl text-gray-800 dark:text-gray-200">
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
 					<FiGithub />
 				</li>
 
-				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
 					<FiLinkedin />
 				</li>
-				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
 					<FiTwitter />
 				</li>
-				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
 					<FiFacebook />
 				</li>
 				{/* <li className="border h-36 ml-5 border-gray-800"></li> */}
@@ -88,12 +88,12 @@ export default function Home() {
 					<div className="w-1/6">
 						{/* <Image src="/images/me.png" width={200} height={200} /> */}
 					</div>
-					<div className="w-5/6 intro relative">
+					<div className="w-5/6 intro relative z-50">
 						{/* <div className=""></div> */}
 						<label className="text-xl ">
 							Hello, It's Eugene from Manila
 						</label>
-						<h1 className="font-bold text-7xl leading-tight font-extrabold">
+						<h1 className="text-7xl leading-tight font-extrabold">
 							Let my{" "}
 							<span className="text-yellow-500">portfolio</span>{" "}
 							describe me.
@@ -226,7 +226,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="max-w-screen-xl mx-auto">
+				<section className="">
 					<Heading2
 						data={{
 							title: "experiences",
@@ -269,11 +269,21 @@ export default function Home() {
 						/>
 					</div>
 				</section>
-				<section className="max-w-screen-xl mx-auto">
+				<section className="">
 					<Heading2
 						data={{
 							title: "Skills",
-							subtitle: "What i use?",
+							subtitle: "What tool I use?",
+							textAlign: "text-center",
+						}}
+					/>
+					<SkillList />
+				</section>
+				<section className="">
+					<Heading2
+						data={{
+							title: "Skills",
+							subtitle: "What tool I use?",
 							textAlign: "text-center",
 						}}
 					/>
