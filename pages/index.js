@@ -93,7 +93,7 @@ export default function Home() {
 						<label className="text-xl ">
 							Hello, It's Eugene from Manila
 						</label>
-						<h1 className="text-7xl leading-tight font-extrabold">
+						<h1 className="text-7xl leading-tight font-extrabold drop-shadow-xl dark:drop-shadow-none">
 							Let my{" "}
 							<span className="text-yellow-500">portfolio</span>{" "}
 							describe me.
