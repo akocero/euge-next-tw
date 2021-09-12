@@ -5,6 +5,7 @@ import {
 	FiLinkedin,
 	FiTwitter,
 	FiFacebook,
+	FiInstagram,
 	FiLink,
 } from "react-icons/fi";
 import React, { useState, useEffect } from "react";
@@ -13,8 +14,9 @@ import Navbar from "../components/layouts/Navbar/Navbar";
 import Footer from "../components/layouts/Footer";
 import ButtonCTA from "../components/ButtonCTA";
 import ButtonLink from "../components/ButtonLink";
-import Tag from "../components/Tag";
+import ExpiItem from "../components/ExpiItem";
 import SkillList from "../components/SkillList";
+import Heading2 from "../components/Heading2";
 
 export default function Home() {
 	const [dark, setDark] = useState(true);
@@ -65,6 +67,22 @@ export default function Home() {
 				dark={dark}
 				isScrollingDown={scrollState}
 			/>
+			<ul className="links flex flex-col items-start fixed bottom-4 left-10">
+				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+					<FiGithub />
+				</li>
+
+				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+					<FiLinkedin />
+				</li>
+				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+					<FiTwitter />
+				</li>
+				<li className="mb-4 text-xl bg-primary p-3 rounded-xl">
+					<FiFacebook />
+				</li>
+				{/* <li className="border h-36 ml-5 border-gray-800"></li> */}
+			</ul>
 			<main className="max-w-screen-lg mx-auto">
 				<section className="flex items-center justify-center h-screen">
 					<div className="w-1/6">
@@ -75,11 +93,11 @@ export default function Home() {
 						<label className="text-xl ">
 							Hello, It's Eugene from Manila
 						</label>
-						<h2 className="font-bold text-6xl leading-tight">
+						<h1 className="font-bold text-7xl leading-tight font-extrabold">
 							Let my{" "}
 							<span className="text-yellow-500">portfolio</span>{" "}
 							describe me.
-						</h2>
+						</h1>
 						<div className="flex mt-8">
 							<ButtonCTA />
 							{/* <div className="">
@@ -92,13 +110,13 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="mb-20">
-					<div className="mb-14">
-						<h2 className="font-bold text-3xl ">featured works.</h2>
-						<label htmlFor="" className="text-yellow-500 text-lg ">
-							What i do now?
-						</label>
-					</div>
+				<section className="">
+					<Heading2
+						data={{
+							title: "featured projects",
+							subtitle: "What i do now?",
+						}}
+					/>
 					<article className="flex">
 						{/* <div className="absolute top-0 left-0 w-3/6 h-full justify-center flex flex-col"></div> */}
 						{/* <div className="w-3/5"> */}
@@ -118,42 +136,46 @@ export default function Home() {
 
 						{/* </div> */}
 						<div className="w-2/5 z-10 flex flex-col h-full featured-content">
-							<div className="mb-8">
-								<ButtonLink Icon={FiGithub} />
-								<ButtonLink Icon={FiLink} />
-							</div>
-							<span class="text-md text-yellow-500">
-								Serverless Website Application
-							</span>
-							<h3 className="text-3xl font-semibold mb-6">
+							<h3 className="text-2xl text-yellow-500 font-bold">
 								PelikulaPH
 							</h3>
+							<label className="text-md text-gray-300">
+								IMDB + Mobilarian Alternative
+							</label>
 
-							<p className=" font-light ">
+							<p className="text-md text-gray-400 mt-4">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Animi quas in necessitatibus
 								id perferendis error odit incidunt expedita
 								sequi. Minus.
 							</p>
+
+							<div className="mt-8 flex content-end">
+								<a className="mr-4 text-2xl">
+									<FiGithub />
+								</a>
+								<a className="mr-4 text-2xl">
+									<FiLink />
+								</a>
+							</div>
 						</div>
 					</article>
 				</section>
-				<section className="py-6">
-					<div className="mb-14">
-						<h2 className="font-bold text-3xl ">
-							noteworthy projects.
-						</h2>
-						<label htmlFor="" className="text-yellow-500 text-lg ">
-							What i have done?
-						</label>
-					</div>
+				<section className="">
+					<Heading2
+						data={{
+							title: "noteworthy projects",
+							subtitle: "What i have done?",
+							textAlign: "text-center",
+						}}
+					/>
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 						<ProjectCard
 							data={{
 								title: "PelikulaPH",
 								subtitle: "Imdb + Mobilarian Alternative",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["vue", "firebase", "sass"],
 							}}
 						/>
 						<ProjectCard
@@ -161,7 +183,7 @@ export default function Home() {
 								title: "HxH API",
 								subtitle: "Hunter x Hunter Open Source API",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["lumen", "php", "laravel"],
 							}}
 						/>
 						<ProjectCard
@@ -169,7 +191,7 @@ export default function Home() {
 								title: "eugeCSS",
 								subtitle: "CSS Library",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["sass", "javascript", "css", "html"],
 							}}
 						/>
 						<ProjectCard
@@ -177,7 +199,7 @@ export default function Home() {
 								title: "Payroll Enterprise Cloud",
 								subtitle: "Payroll System in Cloud Platform",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["laravel", "vue", "bootstrap"],
 							}}
 						/>
 						<ProjectCard
@@ -186,7 +208,12 @@ export default function Home() {
 								subtitle:
 									"Automated Information System with Google Map Locator",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: [
+									"laravel",
+									"bootstrap",
+									"javascript",
+									"jquery",
+								],
 							}}
 						/>
 						<ProjectCard
@@ -198,54 +225,59 @@ export default function Home() {
 						/>
 					</div>
 				</section>
-				{/* <section className="max-w-screen-xl mx-auto py-6">
-					<h2 className="font-bold text-4xl mb-10">skills.</h2>
-					<SkillList />
-				</section> */}
-				<section className="py-6">
-					<h2 className="font-bold text-4xl mb-10">experieces</h2>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Omnis numquam suscipit placeat, exercitationem eum
-						aperiam nam ipsum iusto id sequi?
-					</p>
 
-					<div className="flex overflow-x-scroll">
-						<div className="flex items-center  w-full py-8">
-							{/* <Image
-								className="rounded-lg"
-								src="/images/1.jpg"
-								layout="fill"
-								className="object-contain w-full relative"
-							/> */}
+				<section className="max-w-screen-xl mx-auto">
+					<Heading2
+						data={{
+							title: "experiences",
+							subtitle: "I envolved with?",
+						}}
+					/>
 
-							<img
-								src="/images/1.jpg"
-								alt=""
-								className="rounded-lg mr-5 max-w-sm"
-							/>
-							<img
-								src="/images/1.jpg"
-								alt=""
-								className="rounded-lg mr-5 max-w-sm"
-							/>
-							<img
-								src="/images/1.jpg"
-								alt=""
-								className="rounded-lg mr-5 max-w-sm"
-							/>
-							<img
-								src="/images/1.jpg"
-								alt=""
-								className="rounded-lg mr-5 max-w-sm"
-							/>
-							<img
-								src="/images/1.jpg"
-								alt=""
-								className="rounded-lg mr-5 max-w-sm"
-							/>
-						</div>
+					<div className="grid grid-cols-3 gap-6">
+						<ExpiItem
+							data={{
+								title: "Mustard Seed Systems Corp.",
+								position: "Jr. Web Developer",
+								body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae aspernatur error sed ad harum veniam quod.",
+							}}
+						/>
+
+						<ExpiItem
+							data={{
+								title: "FbCadCam Software Services.",
+								position: "Assoc. Software Developer",
+								body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati minima quia ab officia eum, a quo adipisci cupiditate delectus facere?",
+							}}
+						/>
+
+						<ExpiItem
+							data={{
+								title: "STI College",
+								position: "Game Development Instructor",
+								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam adipisci beatae consectetur unde.",
+							}}
+						/>
+
+						<ExpiItem
+							data={{
+								title: "eugeSoftware (Freelancing)",
+								position:
+									"Self Employed, Full Stack Developer, UI/UX",
+								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sequi aut iste.",
+							}}
+						/>
 					</div>
+				</section>
+				<section className="max-w-screen-xl mx-auto">
+					<Heading2
+						data={{
+							title: "Skills",
+							subtitle: "What i use?",
+							textAlign: "text-center",
+						}}
+					/>
+					<SkillList />
 				</section>
 			</main>
 			<Footer dark={dark} />

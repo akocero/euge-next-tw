@@ -19,7 +19,9 @@
 		@apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
 	}
 } */
-
+section {
+	@apply mb-36;
+}
 @font-face {
 	font-family: "Cascadia Code";
 	src: url("../public/CascadiaCode.woff2") format("woff2");
@@ -42,6 +44,7 @@ h4,
 h5,
 a,
 p,
+span,
 button {
 	font-family: "Poppins";
 }
@@ -59,25 +62,28 @@ button {
 .intro::after {
 	content: "";
 	height: 400px;
-	width: 400px;
+	width: 500px;
 	position: absolute;
-	border-radius: 50%;
+	border-radius: 400px;
 	top: -4rem;
 	right: 0;
 	background-color: #f59e0b;
 	opacity: 0.03;
+	transform: rotateZ(-24deg);
 }
 
 .intro::before {
 	content: "";
 	height: 400px;
-	width: 400px;
+	width: 500px;
 	position: absolute;
-	border-radius: 50%;
+	border-radius: 400px;
 	top: -4rem;
 	right: -2rem;
-	background-color: #c4c4c4;
-	opacity: 0.03;
+	/* background-color: #c4c4c4; */
+	border: 3px solid #f59e0b;
+	opacity: 0.3;
+	transform: rotateZ(24deg);
 }
 .featured-content {
 	position: relative;
@@ -90,8 +96,9 @@ button {
 	border-radius: 300px;
 	top: -40%;
 	right: -12%;
-	background-color: #f59e0b;
-	opacity: 0.03;
+	/* background-color: #f59e0b; */
+	border: 2px solid #f59e0b;
+	opacity: 0.1;
 	transform: rotateZ(24deg);
 }
 
@@ -103,8 +110,9 @@ button {
 	border-radius: 300px;
 	top: -40%;
 	right: -16%;
-	background-color: #c4c4c4;
-	opacity: 0.03;
+	/* background-color: #c4c4c4; */
+	border: 3px solid #f59e0b;
+	opacity: 0.2;
 	transform: rotateZ(24deg);
 }
 

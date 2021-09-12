@@ -4,21 +4,30 @@ import ButtonLink from "./ButtonLink";
 
 const ProjectCard = ({ data }) => {
 	return (
-		<div className="dark:bg-primary bg-gray-100 p-6 rounded-md border-gray-200 border dark:border-0">
-			<div className="mb-6 flex">
-				<ButtonLink Icon={FiFolder} />
+		<div className="dark:bg-primary bg-gray-100 text-gray-400  p-6 rounded-md border-gray-200 border dark:border-0">
+			<div className="mb-6 flex text-2xl">
+				<a href="">
+					<FiFolder />
+				</a>
+
 				<div className="ml-auto">
-					<ButtonLink Icon={FiGithub} />
-					<ButtonLink Icon={FiLink} />
+					<a href="" className="inline-block mr-4">
+						<FiGithub />
+					</a>
+					<a href="" className="inline-block">
+						<FiLink />
+					</a>
 				</div>
 			</div>
 
-			<h3 className="text-lg mb-2 font-semibold mt-2">{data.title}</h3>
-			<label htmlFor="" className="text-yellow-500 text-regular ">
+			<h3 className="text-lg font-semibold mt-2 text-yellow-500">
+				{data.title}
+			</h3>
+			<label htmlFor="" className="text-regular text-gray-500">
 				{data.subtitle}
 			</label>
 
-			<p className="text-gray-600 dark:text-gray-400 mt-2">{data.body}</p>
+			<p className="text-gray-600 dark:text-gray-300 mt-4">{data.body}</p>
 			<div className="mt-6">
 				{data.tags.map((tag) => (
 					<Tag type={tag} size={"sm"} key={tag} />

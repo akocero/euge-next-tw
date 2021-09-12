@@ -3,19 +3,75 @@ const Tag = ({ type, size, tooltip = "" }) => {
 	const [tagColor, setTagColor] = useState("");
 	const generateStyle = (type) => {
 		if (type === "laravel") {
-			setTagColor("bg-red-500 text-red-100");
+			setTagColor("text-red-600");
+		}
+
+		if (type === "react") {
+			setTagColor("text-blue-400");
+		}
+
+		if (type === "tailwind") {
+			setTagColor("text-blue-300");
+		}
+
+		if (type === "jquery") {
+			setTagColor("text-blue-500");
+		}
+
+		if (type === "node") {
+			setTagColor("text-green-500");
+		}
+
+		if (type === "next") {
+			setTagColor("text-gray-200");
+		}
+
+		if (type === "php") {
+			setTagColor("text-indigo-500");
+		}
+
+		if (type === "postgre") {
+			setTagColor("text-indigo-300");
+		}
+
+		if (type === "lumen") {
+			setTagColor("text-red-300");
+		}
+
+		if (type === "html") {
+			setTagColor("text-yellow-600");
+		}
+
+		if (type === "css") {
+			setTagColor("text-blue-500");
+		}
+
+		if (type === "sass") {
+			setTagColor("text-red-500");
+		}
+
+		if (type === "bootstrap") {
+			setTagColor("text-indigo-700");
+		}
+
+		if (type === "git") {
+			setTagColor("text-black");
+		}
+
+		if (type === "docker") {
+			setTagColor("text-blue-400");
 		}
 
 		if (type === "firebase") {
-			setTagColor("bg-yellow-300 text-yellow-900");
+			setTagColor("text-yellow-400");
 		}
 
 		if (type === "javascript") {
-			setTagColor("bg-yellow-200 text-gray-800");
+			setTagColor("text-yellow-200");
 		}
 
 		if (type === "vue") {
-			setTagColor("bg-green-500 text-white");
+			setTagColor("text-green-500");
 		}
 	};
 
@@ -25,9 +81,9 @@ const Tag = ({ type, size, tooltip = "" }) => {
 
 	return (
 		<span
-			className={` ${tagColor} ${tooltip} rounded-full px-3 py-0.5 mr-2 font-medium inline-block mb-2 text-${size}`}
+			className={`dark:bg-gray-800  dark:text-gray-300 ${tooltip} rounded-full px-3 py-0.5 mr-2 font-regular inline-block mb-2 text-${size}`}
 		>
-			#{type}
+			{type}
 		</span>
 	);
 };

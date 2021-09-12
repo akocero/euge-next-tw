@@ -4,7 +4,7 @@ import { SiNextDotJs } from "react-icons/si";
 
 const Footer = ({ dark }) => {
 	return (
-		<footer className="text-center font-bold dark:font-semibold py-6 bg-gray-100 dark:bg-gray-900  text-gray-700 dark:text-gray-100 ">
+		<footer className="text-center font-bold dark:font-normal py-6 bg-gray-100 dark:bg-gray-900  text-gray-700 dark:text-gray-100 ">
 			<div className="w-1/3 mx-auto">
 				<p className=" p-4">
 					Find an issue with this page? Fix it on{" "}
