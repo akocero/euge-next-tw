@@ -8,7 +8,7 @@ const Navbar = ({ toggleDarkMode, dark, isScrollingDown }) => {
 				isScrollingDown == "scroll-down" ? "-top-full" : ""
 			} ${
 				isScrollingDown == "scroll-up"
-					? "bg-white dark:bg-gray-800 shadow z-50 h-16"
+					? "bg-white dark:bg-primary shadow z-50 h-16"
 					: ""
 			}`}
 		>

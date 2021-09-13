@@ -5,6 +5,7 @@ import {
 	FiLinkedin,
 	FiTwitter,
 	FiFacebook,
+	FiInstagram,
 	FiLink,
 } from "react-icons/fi";
 import React, { useState, useEffect } from "react";
@@ -13,8 +14,9 @@ import Navbar from "../components/layouts/Navbar/Navbar";
 import Footer from "../components/layouts/Footer";
 import ButtonCTA from "../components/ButtonCTA";
 import ButtonLink from "../components/ButtonLink";
-import Tag from "../components/Tag";
+import ExpiItem from "../components/ExpiItem";
 import SkillList from "../components/SkillList";
+import Heading2 from "../components/Heading2";
 
 export default function Home() {
 	const [dark, setDark] = useState(true);
@@ -65,160 +67,280 @@ export default function Home() {
 				dark={dark}
 				isScrollingDown={scrollState}
 			/>
+			<ul className="links flex flex-col items-start fixed bottom-4 left-10 text-xl text-gray-800 dark:text-gray-200">
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+					<FiGithub />
+				</li>
+
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+					<FiLinkedin />
+				</li>
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+					<FiTwitter />
+				</li>
+				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+					<FiFacebook />
+				</li>
+				{/* <li className="border h-36 ml-5 border-gray-800"></li> */}
+			</ul>
 			<main className="max-w-screen-lg mx-auto">
 				<section className="flex items-center justify-center h-screen">
-					<div className="w-2/5">
+					<div className="w-1/6">
 						{/* <Image src="/images/me.png" width={200} height={200} /> */}
 					</div>
-					<div className="w-3/5">
-						<label className="text-2xl ">
+					<div className="w-5/6 intro relative z-10">
+						{/* <div className=""></div> */}
+						<label className="text-xl ">
 							Hello, It's Eugene from Manila
 						</label>
-						<h2 className="font-bold text-7xl leading-tight">
+						<h1 className="text-7xl leading-tight font-extrabold drop-shadow-xl dark:drop-shadow-none">
 							Let my{" "}
 							<span className="text-yellow-500">portfolio</span>{" "}
 							describe me.
-						</h2>
+						</h1>
 						<div className="flex mt-8">
 							<ButtonCTA />
-							<div className="">
+							{/* <div className="">
 								<ButtonLink Icon={FiGithub} />
 								<ButtonLink Icon={FiFacebook} />
 								<ButtonLink Icon={FiLinkedin} />
 								<ButtonLink Icon={FiTwitter} />
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</section>
 
-				<section className="mb-20">
-					<h2 className="font-bold text-4xl mb-20">
-						featured works.
-					</h2>
+				<section className="">
+					<Heading2
+						data={{
+							title: "featured projects",
+							subtitle: "What i do now?",
+						}}
+					/>
 					<article className="flex">
-						{/* <div className="absolute top-0 left-0 w-3/6 h-full justify-center flex flex-col"></div> */}
-						<div className="w-3/5">
+						<div className="relative w-3/5 featured-img z-20">
 							<img
 								src="/images/pelikula-land.png"
 								alt=""
-								className="-rotate-2 scale-105 ml-4"
+								width="94%"
+								className="rounded-2xl"
 							/>
 						</div>
-						<div className="w-2/5 z-10 flex flex-col h-full text-right">
-							<span class="text-md text-gray-600">
-								Serverless Web App
-							</span>
-							<h3 className="text-2xl font-semibold mb-6">
+
+						<div className="w-2/5 relative z-10 flex flex-col h-full featured-content">
+							<h3 className="text-2xl text-yellow-500  font-bold">
 								PelikulaPH
 							</h3>
+							<label className="text-md dark:text-gray-300 text-gray-800">
+								IMDB + Mobilarian Alternative
+							</label>
 
-							<p className="bg-gray-800 py-4 px-6 rounded-lg shadow bg-opacity-75">
+							<p className="text-md dark:text-gray-400 text-gray-800 mt-4">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Animi quas in necessitatibus
 								id perferendis error odit incidunt expedita
 								sequi. Minus.
 							</p>
-							<div className="pt-12">
-								<ButtonLink Icon={FiGithub} />
-								<ButtonLink Icon={FiLink} />
+
+							<div className="mt-8 flex content-end">
+								<a className="mr-4 text-2xl">
+									<FiGithub />
+								</a>
+								<a className="mr-4 text-2xl">
+									<FiLink />
+								</a>
 							</div>
 						</div>
 					</article>
 				</section>
-				<section className="py-6">
-					<h2 className="font-bold text-4xl mb-10">
-						noteworthy projects.
-					</h2>
+				<section className="">
+					<Heading2
+						data={{
+							title: "noteworthy projects",
+							subtitle: "What i have done?",
+							textAlign: "text-center",
+						}}
+					/>
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 						<ProjectCard
 							data={{
 								title: "PelikulaPH",
+								subtitle: "Imdb + Mobilarian Alternative",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["vue", "firebase", "sass"],
 							}}
 						/>
 						<ProjectCard
 							data={{
-								title: "HxH API (Hunter x Hunter API)",
+								title: "HxH API",
+								subtitle: "Hunter x Hunter Open Source API",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["lumen", "php", "laravel"],
 							}}
 						/>
 						<ProjectCard
 							data={{
-								title: "eugecss (CSS Framework)",
+								title: "eugeCSS",
+								subtitle: "CSS Library",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["sass", "javascript", "css", "html"],
 							}}
 						/>
 						<ProjectCard
 							data={{
-								title: "PelikulaPH",
+								title: "Payroll Enterprise Cloud",
+								subtitle: "Payroll System in Cloud Platform",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: ["laravel", "vue", "bootstrap"],
 							}}
 						/>
 						<ProjectCard
 							data={{
-								title: "HxH API (Hunter x Hunter API)",
+								title: "Barangay Automation System",
+								subtitle:
+									"Automated Information System with Google Map Locator",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
+								tags: [
+									"laravel",
+									"bootstrap",
+									"javascript",
+									"jquery",
+								],
 							}}
 						/>
 						<ProjectCard
 							data={{
-								title: "eugecss (CSS Framework)",
+								title: "Point of Sale",
 								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
 								tags: ["laravel", "javascript", "firebase"],
 							}}
 						/>
 					</div>
 				</section>
-				{/* <section className="max-w-screen-xl mx-auto py-6">
-					<h2 className="font-bold text-4xl mb-10">skills.</h2>
+
+				<section className="">
+					<Heading2
+						data={{
+							title: "experiences",
+							subtitle: "I envolved with?",
+						}}
+					/>
+
+					<div className="grid grid-cols-3 gap-6">
+						<ExpiItem
+							data={{
+								title: "Mustard Seed Systems Corp.",
+								position: "Jr. Web Developer",
+								body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae aspernatur error sed ad harum veniam quod.",
+							}}
+						/>
+
+						<ExpiItem
+							data={{
+								title: "FbCadCam Software Services.",
+								position: "Assoc. Software Developer",
+								body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati minima quia ab officia eum, a quo adipisci cupiditate delectus facere?",
+							}}
+						/>
+
+						<ExpiItem
+							data={{
+								title: "STI College",
+								position: "Game Development Instructor",
+								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam adipisci beatae consectetur unde.",
+							}}
+						/>
+
+						<ExpiItem
+							data={{
+								title: "eugeSoftware (Freelancing)",
+								position:
+									"Self Employed, Full Stack Developer, UI/UX",
+								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sequi aut iste.",
+							}}
+						/>
+					</div>
+				</section>
+				<section className="">
+					<Heading2
+						data={{
+							title: "Skills",
+							subtitle: "What tool I use?",
+							textAlign: "text-center",
+						}}
+					/>
 					<SkillList />
-				</section> */}
-				<section className="py-6">
-					<h2 className="font-bold text-4xl mb-10">experieces</h2>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Omnis numquam suscipit placeat, exercitationem eum
-						aperiam nam ipsum iusto id sequi?
-					</p>
-
-					<div className="flex overflow-x-scroll">
-						<div className="flex items-center  w-full py-8">
-							{/* <Image
-								className="rounded-lg"
-								src="/images/1.jpg"
-								layout="fill"
-								className="object-contain w-full relative"
-							/> */}
-
+				</section>
+				<section className="">
+					<Heading2
+						data={{
+							title: "About Me",
+							subtitle: "What I love?",
+							textAlign: "text-center",
+						}}
+					/>
+					<div className="grid grid-cols-3 gap-4 grid-rows-6">
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary row-span-2">
 							<img
 								src="/images/1.jpg"
 								alt=""
-								className="rounded-lg mr-5 max-w-sm"
+								className="h-full object-cover"
 							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
 							<img
-								src="/images/1.jpg"
+								src="/images/2.jpg"
 								alt=""
-								className="rounded-lg mr-5 max-w-sm"
+								className="h-full object-cover"
 							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
 							<img
-								src="/images/1.jpg"
+								src="/images/3.jpg"
 								alt=""
-								className="rounded-lg mr-5 max-w-sm"
+								className="h-full object-cover"
 							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary row-span-2">
 							<img
-								src="/images/1.jpg"
+								src="/images/4.jpg"
 								alt=""
-								className="rounded-lg mr-5 max-w-sm"
+								className="h-full object-cover"
 							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
 							<img
-								src="/images/1.jpg"
+								src="/images/5.jpg"
 								alt=""
-								className="rounded-lg mr-5 max-w-sm"
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/6.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary row-span-2">
+							<img
+								src="/images/7.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/8.jpg"
+								alt=""
+								className="h-full object-cover"
+							/>
+						</div>
+						<div className="rounded-xl overflow-hidden opacity-30 hover:opacity-100 h-auto bg-primary">
+							<img
+								src="/images/9.jpg"
+								alt=""
+								className="h-full object-cover"
 							/>
 						</div>
 					</div>
