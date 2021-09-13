@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
 @tailwind base;
 .tooltip {
 	@apply invisible absolute;
@@ -23,10 +20,10 @@
 section {
 	@apply mb-36;
 }
-@font-face {
+/* @font-face {
 	font-family: "Zilla Slab";
 	src: url("../public/CascadiaCode.woff2") format("woff2");
-}
+} */
 
 body {
 	font-family: "Cascadia Code";
@@ -186,5 +183,5 @@ button {
 	left: 0;
 	border-radius: 1rem;
 	background-color: #34d399;
-	opacity: 0.13;
+	opacity: 0.03;
 }

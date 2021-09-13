@@ -131,18 +131,18 @@ export default function Home() {
 							<h3 className="text-2xl dark:text-green-400 text-green-500  font-bold">
 								PelikulaPH
 							</h3>
-							<label className="text-md dark:text-gray-300 text-gray-900 dark:font-normal font-semibold">
+							<label className="text-md dark:text-gray-300 text-gray-700 dark:font-normal font-semibold">
 								IMDB + Mobilarian Alternative
 							</label>
 
-							<p className="text-md dark:text-gray-400 text-gray-900 mt-4">
+							<p className="text-md dark:text-gray-400 text-gray-900 mt-4 dark:font-semibold font-bold">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Animi quas in necessitatibus
 								id perferendis error odit incidunt expedita
 								sequi. Minus.
 							</p>
 
-							<div className="mt-8 flex content-end text-gray-900 dark:text-gray-100">
+							<div className="mt-8 flex content-end text-gray-700 dark:text-gray-100">
 								<a className="mr-4 text-2xl">
 									<FiGithub />
 								</a>
@@ -226,7 +226,7 @@ export default function Home() {
 						}}
 					/>
 
-					<div className="grid grid-cols-3 gap-6">
+					<div className="grid grid-cols-3 gap-8">
 						<ExpiItem
 							data={{
 								title: "Mustard Seed Systems Corp.",
