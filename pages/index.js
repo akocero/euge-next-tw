@@ -95,7 +95,7 @@ export default function Home() {
 						</label>
 						<h1 className="text-7xl leading-tight font-extrabold drop-shadow-xl dark:drop-shadow-none">
 							Let my{" "}
-							<span className="text-yellow-500">portfolio</span>{" "}
+							<span className="text-green-500">portfolio</span>{" "}
 							describe me.
 						</h1>
 						<div className="flex mt-8">
@@ -128,21 +128,21 @@ export default function Home() {
 						</div>
 
 						<div className="w-2/5 relative z-10 flex flex-col h-full featured-content">
-							<h3 className="text-2xl text-yellow-500  font-bold">
+							<h3 className="text-2xl dark:text-green-400 text-green-500  font-bold">
 								PelikulaPH
 							</h3>
-							<label className="text-md dark:text-gray-300 text-gray-800">
+							<label className="text-md dark:text-gray-300 text-gray-900 dark:font-normal font-semibold">
 								IMDB + Mobilarian Alternative
 							</label>
 
-							<p className="text-md dark:text-gray-400 text-gray-800 mt-4">
+							<p className="text-md dark:text-gray-400 text-gray-900 mt-4">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Animi quas in necessitatibus
 								id perferendis error odit incidunt expedita
 								sequi. Minus.
 							</p>
 
-							<div className="mt-8 flex content-end">
+							<div className="mt-8 flex content-end text-gray-900 dark:text-gray-100">
 								<a className="mr-4 text-2xl">
 									<FiGithub />
 								</a>
