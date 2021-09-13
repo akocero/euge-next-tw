@@ -4,7 +4,7 @@ import NavItem from "./NavItem";
 const Navbar = ({ toggleDarkMode, dark, isScrollingDown }) => {
 	return (
 		<header
-			className={`fixed top-0 left-0 w-full flex h-20 items-center transition-all duration-300  ${
+			className={`fixed top-0 left-0 w-full flex h-20 items-center transition-all duration-300 font-bold lowercase ${
 				isScrollingDown == "scroll-down" ? "-top-full" : ""
 			} ${
 				isScrollingDown == "scroll-up"
@@ -13,7 +13,7 @@ const Navbar = ({ toggleDarkMode, dark, isScrollingDown }) => {
 			}`}
 		>
 			<div className="flex justify-between w-full max-w-screen-xl mx-auto">
-				<h1 className="font-semibold">eugene badato.</h1>
+				<label className="font-bold">eugene badato.</label>
 				<div className="ml-auto">
 					<ul className="flex">
 						<NavItem title={"Home"} />
