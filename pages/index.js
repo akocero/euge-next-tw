@@ -17,11 +17,33 @@ import ButtonLink from "../components/ButtonLink";
 import ExpiItem from "../components/ExpiItem";
 import SkillList from "../components/SkillList";
 import Heading2 from "../components/Heading2";
+import { createClient } from "contentful";
 
-export default function Home() {
+export async function getStaticProps() {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE_ID,
+		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+	});
+
+	const res = await client.getEntries({
+		content_type: "music",
+	});
+
+	return {
+		props: {
+			projects: res.items,
+		},
+	};
+}
+
+export default function Home({ projects }) {
 	const [dark, setDark] = useState(true);
 	const [lastScroll, setLastScroll] = useState(0);
 	const [scrollState, setScrollState] = useState("");
+
+	useEffect(() => {
+		console.log("projects", projects);
+	}, []);
 
 	useEffect(() => {
 		const onScroll = (e) => {
