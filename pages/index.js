@@ -13,7 +13,7 @@ import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/layouts/Navbar/Navbar";
 import Footer from "../components/layouts/Footer";
 import ButtonCTA from "../components/ButtonCTA";
-import ButtonLink from "../components/ButtonLink";
+import FeaturedProject from "../components/FeaturedProject";
 import ExpiItem from "../components/ExpiItem";
 import SkillList from "../components/SkillList";
 import Heading2 from "../components/Heading2";
@@ -26,7 +26,7 @@ export async function getStaticProps() {
 	});
 
 	const res = await client.getEntries({
-		content_type: "music",
+		content_type: "project",
 	});
 
 	return {
@@ -138,44 +138,7 @@ export default function Home({ projects }) {
 							subtitle: "What i do now?",
 						}}
 					/>
-					<article className="flex">
-						<div className="relative w-3/5 featured-img z-20">
-							<img
-								src="/images/pelikula-land.png"
-								alt=""
-								width="94%"
-								className="rounded-2xl"
-							/>
-						</div>
-
-						<div className="w-2/5 relative z-10 flex flex-col h-full featured-content">
-							<h3 className="text-2xl dark:text-green-400 text-green-500  font-bold">
-								PelikulaPH
-							</h3>
-							<label className="text-md dark:text-gray-300 text-gray-700 dark:font-normal font-semibold">
-								IMDB + Mobilarian Alternative
-							</label>
-
-							<p className="text-md dark:text-gray-400 text-gray-900 mt-4 dark:font-semibold font-bold">
-								Lorem ipsum dolor, sit amet consectetur
-								adipisicing elit. Animi quas in necessitatibus
-								id perferendis error odit incidunt expedita
-								sequi. Minus. Lorem ipsum dolor, sit amet
-								consectetur adipisicing elit. Animi quas in
-								necessitatibus id perferendis error odit
-								incidunt expedita sequi. Minus.
-							</p>
-
-							<div className="mt-8 flex content-end text-gray-700 dark:text-gray-100">
-								<a className="mr-4 text-2xl">
-									<FiGithub />
-								</a>
-								<a className="mr-4 text-2xl">
-									<FiLink />
-								</a>
-							</div>
-						</div>
-					</article>
+					<FeaturedProject project={projects[3]} />
 				</section>
 				<section className="">
 					<Heading2
@@ -186,59 +149,12 @@ export default function Home({ projects }) {
 						}}
 					/>
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-						<ProjectCard
-							data={{
-								title: "PelikulaPH",
-								subtitle: "Imdb + Mobilarian Alternative",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["vue", "firebase", "sass"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "HxH API",
-								subtitle: "Hunter x Hunter Open Source API",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["lumen", "php", "laravel"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "eugeCSS",
-								subtitle: "CSS Library",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["sass", "javascript", "css", "html"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "Payroll Enterprise Cloud",
-								subtitle: "Payroll System in Cloud Platform",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "vue", "bootstrap"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "Barangay Automation System",
-								subtitle:
-									"Automated Information System with Google Map Locator",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: [
-									"laravel",
-									"bootstrap",
-									"javascript",
-									"jquery",
-								],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "Point of Sale",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
-							}}
-						/>
+						{projects.map((project) => (
+							<ProjectCard
+								project={project}
+								key={project.sys.id}
+							/>
+						))}
 					</div>
 				</section>
 
