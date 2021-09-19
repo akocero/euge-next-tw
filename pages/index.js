@@ -68,20 +68,19 @@ export default function Home() {
 				isScrollingDown={scrollState}
 			/>
 			<ul className="links flex flex-col items-start fixed bottom-4 left-10 text-xl text-gray-800 dark:text-gray-200">
-				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-xl border-gray-300 border dark:border-gray-800">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiGithub />
 				</li>
 
-				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-xl border-gray-300 border dark:border-gray-800">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiLinkedin />
 				</li>
-				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-xl border-gray-300 border dark:border-gray-800">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiTwitter />
 				</li>
-				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-xl border-gray-300 border dark:border-gray-800">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiFacebook />
 				</li>
-				{/* <li className="border h-36 ml-5 border-gray-800"></li> */}
 			</ul>
 			<main className="max-w-screen-lg mx-auto">
 				<section className="flex items-center justify-center h-screen">
@@ -139,7 +138,10 @@ export default function Home() {
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Animi quas in necessitatibus
 								id perferendis error odit incidunt expedita
-								sequi. Minus.
+								sequi. Minus. Lorem ipsum dolor, sit amet
+								consectetur adipisicing elit. Animi quas in
+								necessitatibus id perferendis error odit
+								incidunt expedita sequi. Minus.
 							</p>
 
 							<div className="mt-8 flex content-end text-gray-700 dark:text-gray-100">
