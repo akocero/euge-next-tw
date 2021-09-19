@@ -13,15 +13,37 @@ import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/layouts/Navbar/Navbar";
 import Footer from "../components/layouts/Footer";
 import ButtonCTA from "../components/ButtonCTA";
-import ButtonLink from "../components/ButtonLink";
+import FeaturedProject from "../components/FeaturedProject";
 import ExpiItem from "../components/ExpiItem";
 import SkillList from "../components/SkillList";
 import Heading2 from "../components/Heading2";
+import { createClient } from "contentful";
 
-export default function Home() {
+export async function getStaticProps() {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE_ID,
+		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+	});
+
+	const res = await client.getEntries({
+		content_type: "project",
+	});
+
+	return {
+		props: {
+			projects: res.items,
+		},
+	};
+}
+
+export default function Home({ projects }) {
 	const [dark, setDark] = useState(true);
 	const [lastScroll, setLastScroll] = useState(0);
 	const [scrollState, setScrollState] = useState("");
+
+	useEffect(() => {
+		console.log("projects", projects);
+	}, []);
 
 	useEffect(() => {
 		const onScroll = (e) => {
@@ -68,20 +90,19 @@ export default function Home() {
 				isScrollingDown={scrollState}
 			/>
 			<ul className="links flex flex-col items-start fixed bottom-4 left-10 text-xl text-gray-800 dark:text-gray-200">
-				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiGithub />
 				</li>
 
-				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiLinkedin />
 				</li>
-				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiTwitter />
 				</li>
-				<li className="mb-4 dark:bg-primary bg-gray-200 p-3 rounded-xl">
+				<li className="mb-4 dark:bg-primary bg-gray-100 p-3 rounded-full border-gray-300 border dark:border-gray-800">
 					<FiFacebook />
 				</li>
-				{/* <li className="border h-36 ml-5 border-gray-800"></li> */}
 			</ul>
 			<main className="max-w-screen-lg mx-auto">
 				<section className="flex items-center justify-center h-screen">
@@ -117,41 +138,7 @@ export default function Home() {
 							subtitle: "What i do now?",
 						}}
 					/>
-					<article className="flex">
-						<div className="relative w-3/5 featured-img z-20">
-							<img
-								src="/images/pelikula-land.png"
-								alt=""
-								width="94%"
-								className="rounded-2xl"
-							/>
-						</div>
-
-						<div className="w-2/5 relative z-10 flex flex-col h-full featured-content">
-							<h3 className="text-2xl dark:text-green-400 text-green-500  font-bold">
-								PelikulaPH
-							</h3>
-							<label className="text-md dark:text-gray-300 text-gray-700 dark:font-normal font-semibold">
-								IMDB + Mobilarian Alternative
-							</label>
-
-							<p className="text-md dark:text-gray-400 text-gray-900 mt-4 dark:font-semibold font-bold">
-								Lorem ipsum dolor, sit amet consectetur
-								adipisicing elit. Animi quas in necessitatibus
-								id perferendis error odit incidunt expedita
-								sequi. Minus.
-							</p>
-
-							<div className="mt-8 flex content-end text-gray-700 dark:text-gray-100">
-								<a className="mr-4 text-2xl">
-									<FiGithub />
-								</a>
-								<a className="mr-4 text-2xl">
-									<FiLink />
-								</a>
-							</div>
-						</div>
-					</article>
+					<FeaturedProject project={projects[3]} />
 				</section>
 				<section className="">
 					<Heading2
@@ -162,59 +149,12 @@ export default function Home() {
 						}}
 					/>
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-						<ProjectCard
-							data={{
-								title: "PelikulaPH",
-								subtitle: "Imdb + Mobilarian Alternative",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["vue", "firebase", "sass"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "HxH API",
-								subtitle: "Hunter x Hunter Open Source API",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["lumen", "php", "laravel"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "eugeCSS",
-								subtitle: "CSS Library",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["sass", "javascript", "css", "html"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "Payroll Enterprise Cloud",
-								subtitle: "Payroll System in Cloud Platform",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "vue", "bootstrap"],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "Barangay Automation System",
-								subtitle:
-									"Automated Information System with Google Map Locator",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: [
-									"laravel",
-									"bootstrap",
-									"javascript",
-									"jquery",
-								],
-							}}
-						/>
-						<ProjectCard
-							data={{
-								title: "Point of Sale",
-								body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore itaque delectus eos nam.",
-								tags: ["laravel", "javascript", "firebase"],
-							}}
-						/>
+						{projects.map((project) => (
+							<ProjectCard
+								project={project}
+								key={project.sys.id}
+							/>
+						))}
 					</div>
 				</section>
 

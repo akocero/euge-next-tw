@@ -174,14 +174,19 @@ button {
 	z-index: -1;
 }
 
-.featured-img::after {
-	content: "";
-	height: 100%;
+.featured-img-container::after {
+	/* content: "";
+	height: ;
 	width: 94%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	border-radius: 1rem;
 	background-color: #34d399;
-	opacity: 0.03;
+	opacity: 0.03; */
+}
+
+.featured-img-container {
+	width: 94%;
+	/* height: 100%; */
 }
