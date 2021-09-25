@@ -42,10 +42,6 @@ export default function Home({ projects }) {
 	const [scrollState, setScrollState] = useState("");
 
 	useEffect(() => {
-		console.log("projects", projects);
-	}, []);
-
-	useEffect(() => {
 		const onScroll = (e) => {
 			const currentScroll = window.pageYOffset;
 
@@ -138,7 +134,14 @@ export default function Home({ projects }) {
 							subtitle: "What i do now?",
 						}}
 					/>
-					<FeaturedProject project={projects[3]} />
+					{projects
+						.filter((project) => project.fields.featured)
+						.map((filteredProject) => (
+							<FeaturedProject
+								project={filteredProject}
+								key={filteredProject.sys.id}
+							/>
+						))}
 				</section>
 				<section className="">
 					<Heading2

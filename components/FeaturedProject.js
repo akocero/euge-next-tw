@@ -15,12 +15,15 @@ const FeaturedProject = ({ project, left = false }) => {
 		<article className="flex">
 			<div className="relative w-3/5 featured-img z-20">
 				<div className="rounded-2xl featured-img-container">
-					<Image
-						src={"https:" + image.fields.file.url}
-						alt={title}
-						width={image.fields.file.details.image.width}
-						height={image.fields.file.details.image.height}
-					/>
+					{image && (
+						<Image
+							src={"https:" + image.fields.file.url}
+							alt={title}
+							width={image.fields.file.details.image.width}
+							height={image.fields.file.details.image.height}
+						/>
+						// <img src={"https:" + image.fields.file.url} alt="" />
+					)}
 				</div>
 			</div>
 
